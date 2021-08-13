@@ -100,13 +100,13 @@ csv_columns = ['School', 'County', 'District', 'School Address', 'Phone Number',
 url = 'https://www.cde.ca.gov/SchoolDirectory/Results?title=California%20School%20Directory&search=1&status=1&types=61%2C60%2C66%2C67%2C62%2C64&nps=0&multilingual=0&charter=2&magnet=0&yearround=0&qdc=0&qsc=0&tab=1&order=0&page=0&items=500&hidecriteria=False&isstaticreport=False'
 main = Link(url)
 # Writing links to file
-"""links = main.GetLinks()
-with open('links.json', 'w') as outfile:
+links = main.GetLinks()
+"""with open('links.json', 'w') as outfile:
     #json.dump(links, outfile)"""
 
-# Reading links from file
+"""# Reading links from file
 with open('links.json', 'r') as outfile:
-    links = json.load(outfile)
+    links = json.load(outfile)"""
 
 data = main.GetData(links, "https://www.cde.ca.gov/SchoolDirectory/details?cdscode=", csv_columns)
 toCsv(data, csv_columns)
